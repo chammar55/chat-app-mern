@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const messageSchema = new mongoose.Schema(
   {
     senderId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId, // store the user _id to which we are refering
       ref: "User",
       required: true,
     },

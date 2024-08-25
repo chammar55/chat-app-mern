@@ -52,7 +52,7 @@ export const getMessages = async (req, resp) => {
     // populate("messages"); will give us direct messages rather then the ids that are in conversation
     const conversation = await Conversation.findOne({
       participants: { $all: [senderId, userToChatId] },
-    }).populate("messages"); // not reference but actual message
+    }).populate("messages"); //populate==> not reference but will give us actual message
 
     if (!conversation) return resp.status(200).json([]);
 

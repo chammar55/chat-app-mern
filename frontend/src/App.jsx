@@ -1,3 +1,4 @@
+// to start this run "npm run dev" in frontend folder
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home/Home";

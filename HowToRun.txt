@@ -1,4 +1,4 @@
 " npm i " in both root directory and in frontend
 
-Frontend:   npm run dev
-backend:    npm run server
+For Frontend go in frontend folder:   npm run dev
+For backend run in root:    npm run server

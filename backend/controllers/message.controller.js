@@ -46,7 +46,7 @@ export const sendMessage = async (req, resp) => {
 
 export const getMessages = async (req, resp) => {
   try {
-    const { id: userToChatId } = req.params;
+    const { id: userToChatId } = req.params; // userToChatId is same as receiverId
     const senderId = req.user._id;
 
     // populate("messages"); will give us direct messages rather then the ids that are in conversation

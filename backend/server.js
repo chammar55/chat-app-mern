@@ -1,6 +1,7 @@
 // To run backend =>" npm run server" in root folder
 //  we are able to use import in backend inplace of require cuz we write "type":"module" in package.json file
 import express from "express";
+import { app, server } from "./socket/socket.js";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
@@ -10,7 +11,7 @@ import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 
-const app = express();
+// const app = express(); // we imported it in socket.io file , Now why we did it because we implemented the socket.io between database and user so that when user1 send a message it can be received by the user2 instantaneously without any lag and be saved in the database also.
 const PORT = process.env.PORT || 5000;
 
 dotenv.config();
@@ -26,7 +27,8 @@ app.use("/api/users", userRoutes);
 //   resp.send("Hello world");
 // });
 
-app.listen(PORT, () => {
+// normally we use app.listen but for socket.io we use server coming from socket.js file
+server.listen(PORT, () => {
   connectToMongoDB();
   console.log(`Server Running on port ${PORT}`);
 });

@@ -12,6 +12,7 @@ function Message({ message }) {
     ? authUser.profilePic
     : selectedConversation?.profilePic;
   const bubbleBgColor = fromMe ? "bg-blue-500" : "";
+  const shakeClass = message.shouldShake ? "shake" : ""; // message.shouldShake  css in index.js and making it true in useListenMessages.js
   return (
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image  avatar">
@@ -19,7 +20,9 @@ function Message({ message }) {
           <img src={profilePic} alt="Tailwind css  chat bubble component" />
         </div>
       </div>
-      <div className={`chat-bubble text-white  ${bubbleBgColor} pb-2`}>
+      <div
+        className={`chat-bubble text-white  ${bubbleBgColor} ${shakeClass}  pb-2`}
+      >
         {message.message}
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">

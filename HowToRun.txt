@@ -2,3 +2,6 @@
 
 For Frontend go in frontend folder:   npm run dev
 For backend run in root:    npm run server
+
+Now have deploy it so 
+just type "npm start" in root to run whole project

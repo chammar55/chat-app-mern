@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    proxy: { "/api": { target: "http://localhost:5000" } }, // this is remove cors error
+    proxy: { "/api": { target: "https://www.chat-app-mern-backend-theta.vercel.app" } }, // this is remove cors error
   },
 });

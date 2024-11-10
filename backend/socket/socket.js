@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://www.chat-app-mern-frontend-ebon.vercel.app"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST"],
   },
 });

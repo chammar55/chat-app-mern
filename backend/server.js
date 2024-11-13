@@ -15,7 +15,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 // const app = express(); // we imported it in socket.io file , Now why we did it because we implemented the socket.io between database and user so that when user1 send a message it can be received by the user2 instantaneously without any lag and be saved in the database also.
 const PORT = process.env.PORT || 5000;
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -27,10 +27,10 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 // These 2 lines are needed to deploy
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-});
+// app.use(express.static(path.join(__dirname, "/frontend/dist")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+// });
 
 // app.get("/", (req, resp) => {
 //   resp.send("Hello world");
